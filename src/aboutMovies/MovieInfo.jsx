@@ -40,7 +40,7 @@ export default function MovieInfo({ movieResult }) {
 
 	return (
 		<div
-			className="w-[24.375rem] min-h-[33rem] p-0 m-0 mx-auto border rounded-lg z-50 mt-[3rem] mobileMedium:w-[26.75rem] mobileMedium:min-h-[33rem] mobileMedium:py-3 md:w-[44rem] md:min-h-[30rem] bg-black bg-opacity-50 backdrop-blur-3xl shadow-2xl overflow-hidden animation transition-transform transform duration-500 bgScreen:p-0 bgScreen:m-0 bgScreen:mx-auto"
+			className="w-[24.375rem] min-h-[33rem] p-0 m-0 mx-auto border rounded-lg z-50 mt-[3rem] mobileMedium:w-[26.75rem] mobileMedium:min-h-[33rem] mobileMedium:py-3 md:w-[44rem] md:min-h-[30rem] bg-black shadow-2xl overflow-hidden transition-transform transform duration-500 bgScreen:p-0 bgScreen:m-0 bgScreen:mx-auto"
 			style={{
 				backgroundImage: `url(${API_BASE_URL}${poster})`,
 				backgroundSize: "cover",

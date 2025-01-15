@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import MovieItem from "./MovieItem";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import MovieInfo from "./MovieInfo";
+
 
 export default function Movies() {
 	const { isOpen, handleToggle } = useMovies();
@@ -48,7 +48,7 @@ export default function Movies() {
 
 	return (
 		<div className=" bg-gradient-to-r from-gray-950 from-10% via-zinc-950 via-55% to-gray-950 to-30% bgScreen:w-[90rem]">
-			<div onClick={handleToggle} className="relative w-[24.375rem] overflow-hidden min-h-[13rem] mobileMedium:w-[26.75rem] items-center justify-center md:mx-auto md:gap-2 md:w-[48rem] md:mr-[4rem] bg-gradient-to-r from-gray-950 from-10% via-zinc-950 via-55% to-gray-950 to-30% bgScreen:w-[67rem] bgScreen:mr-[14rem]">
+			<div  className="w-[24.375rem] overflow-hidden min-h-[13rem] mobileMedium:w-[26.75rem] items-center justify-center md:mx-auto md:gap-2 md:w-[48rem] md:mr-[4rem] bg-gradient-to-r from-gray-950 from-10% via-zinc-950 via-55% to-gray-950 to-30% bgScreen:w-[67rem] bgScreen:mr-[14rem]">
 				<Slider {...settings}>
 					{movies?.results.map((movie, i) => (
 						<div
@@ -59,16 +59,7 @@ export default function Movies() {
 						</div>
 					))}
 				</Slider>
-
-				<div
-					className={
-						isOpen
-							? "absolute  inset-0 bg-black bg-opacity-50 backdrop-blur-3xl z-50 shadow-2xl"
-							: ""
-					}
-				>
 				
-				</div>
 			</div>
 		</div>
 	);
