@@ -67,13 +67,15 @@ export default function Movies() {
 							: ""
 					}
 				>
-					{isOpen && <MovieInfo />}
+				
 				</div>
 			</div>
 		</div>
 	);
 }
 
+
+//	{<MovieInfo />}
 //Calling the fetchMovies function from the Movies component
 export async function loader() {
 	try {
