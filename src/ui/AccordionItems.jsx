@@ -106,9 +106,9 @@ const accordions = [
 		contentStyle2:
 			"font-poppins font-medium w-[17.9rem] mt-4 text-[#F4F4F4] md:text-[1rem] md:w-[41rem] mobileMedium:w-[21.75rem] bgScreen:text-[1.3rem] bgScreen:w-[70.35rem]",
 		contentContainerStyle:
-			"min-h-[12rem] border-t border-t-black bg-[#2D2D2D] px-4 py-5 md:min-h-[7rem] mobileMedium:w-[23.75rem] bgScreen:w-[74.125rem] bgScreen:min-h-[5.25rem] bgScreen:pl-[2rem]",
+			"min-h-[12rem] border-t border-t-black bg-[#2D2D2D]  mobileMedium:w-[23.75rem]  px-4 py-5 md:min-h-[7rem] mobileMedium:w-[23.75rem] bgScreen:w-[74.125rem] bgScreen:min-h-[5.25rem] bgScreen:pl-[2rem]",
 		firstContainerStyle:
-			"w-[22rem] mt-3 mb-[3rem] md:w-[45rem] md:ml-8 mobileMedium:mr-[2rem] bgScreen:w-[74.125rem]",
+			"w-[22rem] mt-3 mb-[3rem] md:w-[45rem] md:ml-8 mobileMedium:mr-[2rem]  mobileMedium:w-[23.75rem] bgScreen:w-[74.125rem]",
 		secondContainerStyleForHeaderAndSpan:
 			"w-[22rem] bg-[#2D2D2D] min-h-[4rem] flex items-center justify-between md:w-[45rem] mobileMedium:w-[23.75rem] bgScreen:w-[74.125rem] ",
 		h2Style:

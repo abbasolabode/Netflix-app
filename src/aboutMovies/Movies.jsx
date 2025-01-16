@@ -1,4 +1,4 @@
-import { useMovies } from "../Contexts/MoviesContext";
+//import { useMovies } from "../Contexts/MoviesContext";
 import { fetchMovies } from "../servicesAPI/fetchMovies";
 import { useLoaderData } from "react-router-dom";
 import LoaderUi from "../ui/LoaderUi";
@@ -9,8 +9,9 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 export default function Movies() {
-	const { isOpen, handleToggle } = useMovies();
-	const movies = useLoaderData();
+	//const { isOpen, handleToggle } = useMovies();
+	const movies  = useLoaderData();//Retrieve data 
+	
 
 	//If there's no movies render a loading spinner
 	if (!movies) return <LoaderUi />;
@@ -50,6 +51,7 @@ export default function Movies() {
 		<div className=" bg-gradient-to-r from-gray-950 from-10% via-zinc-950 via-55% to-gray-950 to-30% bgScreen:w-[90rem]">
 			<div  className="w-[24.375rem] overflow-hidden min-h-[13rem] mobileMedium:w-[26.75rem] items-center justify-center md:mx-auto md:gap-2 md:w-[48rem] md:mr-[4rem] bg-gradient-to-r from-gray-950 from-10% via-zinc-950 via-55% to-gray-950 to-30% bgScreen:w-[67rem] bgScreen:mr-[14rem]">
 				<Slider {...settings}>
+					{/*The results array is looped over and passed each of the movies to the movieItem component  */}
 					{movies?.results.map((movie, i) => (
 						<div
 							key={movie.id}
@@ -66,13 +68,14 @@ export default function Movies() {
 }
 
 
-//	{<MovieInfo />}
+
 //Calling the fetchMovies function from the Movies component
 export async function loader() {
 	try {
-		const movies = await fetchMovies();
-		return movies || [];
+		const movies = await fetchMovies();//The result of the API call is returned by the fetchMovies function 
+		return movies || [];//return movies is exist or return an empty array if there's no data 
 	} catch (err) {
-		console.error(err.message);
+		console.error(err.message);//Catch error from the try block
+		throw new Error("Bad requests")
 	}
-}
+};

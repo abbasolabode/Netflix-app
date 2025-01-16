@@ -1,4 +1,4 @@
-import { API_URL, apiKey } from "./apiUrl";
+import { API_URL, apiKey} from "./apiUrl";
 const options = {
 	method: "GET",
 	headers: {
@@ -8,18 +8,21 @@ const options = {
 	},
 };
 
+//The fetchMovies function fetches data from an API 
 export async function fetchMovies() {
 	const res = await fetch(API_URL, options);
 	if (!res.ok) throw new Error("Unable to make a network request");
-	const data = await res.json();
-	console.log("Data fetched", data);
+	const data = await res.json();//Converting the response fetched to a JavaScript readable format and then the result is then stored into data
+	return data || [];// Data is return if exist otherwise an empty array is returned
+}
+
+
+
+//The fetchMovies function fetches data from an API 
+export async function fetchMovieDetails(movieId) {
+	const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`, options);//This fetches data of the clicked or selected movie using the ID
+	if (!res.ok) throw new Error("Unable to make a network request");//If the response is not OK throws an error
+	const data = await res.json();//converts the response to a JavaScript readable format and stores the result into data variable
 	return data || [];
 }
 
-export async function fetchMovieDetails(movieId) {
-	const res = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`, options);
-	if (!res.ok) throw new Error("Unable to make a network request");
-	const data = await res.json();
-	console.log("Fetching data", data);
-	return data || [];
-}

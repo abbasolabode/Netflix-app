@@ -4,36 +4,38 @@ import { useMovies } from "../Contexts/MoviesContext";
 import Button from "../button/Button";
 import { useState } from "react";
 
-export default function MovieInfo({ movieResult }) {
-	const navigate = useNavigate();
+export default function MovieInfo() {
+	const navigate = useNavigate();//using the useNavigate hook to redirect to a different route
 	const { movieResults } = useMovies(); //consuming context
 	const data = useLoaderData(); //Extracting data from the loader
 	const [isOpen, setIsOpen] = useState(false);
-	if (!movieResults) return [];
-	console.log(movieResults);
 
+ //The handleIsOpenToggle function is used to execute the code within its body when it's being clicked i.e it the state is updated when it's toggled, and also the navigate function is also called
 	function handleIsOpenToggle() {
-		setIsOpen((isOpen) => !isOpen);
-		navigate("/");
+		setIsOpen((isOpen) => !isOpen);//state is updated each time the handleIsOpenToggle() is clicked
+		navigate("/");//Navigate to Homepage 
 	}
 
+   //In an event where there's no data fetched an empty array
 	if (!data) return [];
-	console.log(data);
+    
+	console.log(data)
 
 	//Destructuring data from API
 	const {
-		title = "",
-		overView,
-		release_date: date = "",
-		overview = "",
+		title = "", //A defaultvalue of empty string is assigned to title if there's no title
+		overView = "",
+		release_date: date = "", //A defaultvalue of empty string is assigned to release date if there's no release date
+		overview = "", //A defaultvalue of empty string is assigned to overView if there's no overView
 		tagline = "",
 		poster_path: poster = "",
-		genres = [],
+		genres = [],//An empty array is assigned to genres if genre holds no data 
 	} = data;
+   
+	const year = date.slice(0, 4);// extracting the year using the slice method
+	const API_BASE_URL = "https://image.tmdb.org/t/p/w500";//API URL
 
-	const year = date.slice(0, 4);
-	const API_BASE_URL = "https://image.tmdb.org/t/p/w500";
-
+	//Destructuring the genre array
 	const animationGenre = genres[0]?.name || "";
 	const familyGenre = genres[1]?.name || "";
 	const adventureGenre = genres[2]?.name || "";
@@ -86,10 +88,10 @@ export default function MovieInfo({ movieResult }) {
 	);
 }
 
-//Using the loader for asynchronous data fetching
+//Using the loader for asynchronous data fetching... The loader is provider by the React Router Dom
 export async function loader({ params }) {
 	//Using params to extract id of the clicked movie to get more information about the movie
 	const { id } = params; //destructuring the params
 	const dataDetails = await fetchMovieDetails(id); //Calling the fetchMovieDetails function with the ID from params
-	return dataDetails || []; //Return dataDetails
+	return dataDetails || [];//Return dataDetails 
 }
