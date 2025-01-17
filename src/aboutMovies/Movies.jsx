@@ -76,6 +76,6 @@ export async function loader() {
 		return movies || [];//return movies is exist or return an empty array if there's no data 
 	} catch (err) {
 		console.error(err.message);//Catch error from the try block
-		throw new Error("Bad requests")
+		throw new Error("Bad request");
 	}
 };

@@ -6,24 +6,26 @@ const MoviesContext = createContext();
 
 function MovieProvider({ children }) {
 	const [isOpen, setIsOpen] = useState(false);
-	const [movieResults, setMoviesResults] = useState()
- 
+	const [movieResults, setMoviesResults] = useState();
 
 	function handleToggle() {
 		setIsOpen((isOpen) => !isOpen);
 	}
 
-
-    console.log(movieResults);
-
 	return (
-		<MoviesContext.Provider value={{ setIsOpen, isOpen, handleToggle, movieResults, setMoviesResults}}>
+		<MoviesContext.Provider
+			value={{
+				setIsOpen,
+				isOpen,
+				handleToggle,
+				movieResults,
+				setMoviesResults,
+			}}
+		>
 			{children}
 		</MoviesContext.Provider>
 	);
 }
-
-
 
 //custom hook
 function useMovies() {

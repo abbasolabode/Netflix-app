@@ -28,7 +28,7 @@ export default function MovieInfo() {
 		release_date: date = "", //A defaultvalue of empty string is assigned to release date if there's no release date
 		overview = "", //A defaultvalue of empty string is assigned to overView if there's no overView
 		tagline = "",
-		poster_path: poster = "",
+		poster_path: poster = "", 
 		genres = [],//An empty array is assigned to genres if genre holds no data 
 	} = data;
    

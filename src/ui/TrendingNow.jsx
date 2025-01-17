@@ -43,4 +43,3 @@ export default function TrendingNow() {
 		</>
 	);
 }
-//-[#2D2D2D]

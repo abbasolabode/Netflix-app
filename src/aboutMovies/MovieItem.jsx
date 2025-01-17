@@ -47,7 +47,7 @@ const movieIndex = index + 1;
 					</div>
 				</div>
 
-				{/*If the Index is below 10, show 10 of the movies with icons and number   */}
+				{/*If the Index is below or equal to 10, show 10 of the movies with icons and number   */}
 				{movieIndex <= 10 && (
 					<>
 						<img

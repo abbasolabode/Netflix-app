@@ -17,6 +17,7 @@ export default function Button({ moveInfoBtnStyle, bottomFooterBtn, md, bgScreen
 		navigate("/login");
 	} */
 
+		
 	if (md)
 		return (
 			<div>

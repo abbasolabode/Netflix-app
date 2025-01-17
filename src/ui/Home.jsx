@@ -9,12 +9,11 @@ import { fetchMovies } from "../servicesAPI/fetchMovies";
 
 export default function Home() {
 	//const {isOpen} = useMovies();
-	
+
 	const isLargeScreen = window.innerWidth >= 1440; //if the width is greater or equal to 1440px
 	return (
 		<>
 			<div
-			
 				className={`w-[24.375rem] h-[32rem] bg-cover bg-center overflow-hidden mobileMedium:w-[26.75rem] md:w-[48rem] bgScreen:min-w-[90rem]  bgScreen:min-h-[45rem]`}
 				style={{
 					backgroundImage: `url(${
@@ -22,7 +21,7 @@ export default function Home() {
 					})`,
 				}}
 			>
-				<div className="">
+				<div>
 					<Navbar />
 				</div>
 				<div className="w-[24.375rem] min-h-[18rem] mobileMedium:w-[26.75rem] tablet:w-[76.75rem] md:w-[48rem] bgScreen:w-[90rem] bgScreen:min-h-[45rem]">
@@ -51,11 +50,9 @@ export default function Home() {
 						/>
 					</div>
 				</div>
-				
 			</div>
 
 			<TrendingNow />
-
 		</>
 	);
 }
