@@ -33,7 +33,7 @@ export default function Home() {
 						<p className="font-medium md:text-sm bgScreen:text-[1.2rem] bgScreen:font-medium">
 							Starts at &#8358;2,200. Cancel anytime.
 						</p>
-						<p className="text-center w-[22rem] mt-3 font-medium md:w-[30rem] bgScreen:text-base bgScreen:font-normal bgScreen:whitespace-nowrap bgScreen:leading-[1.5]">
+						<p className="text-center w-[22rem] mt-3 font-medium md:w-[30rem] bgScreen:text-base bgScreen:bgScreen:w-[37rem] bgScreen:mr-[0.9rem] bgScreen:font-normal bgScreen:whitespace-nowrap bgScreen:leading-[1.5]">
 							Ready to watch? Enter your email to create or restart your
 							membership.
 						</p>

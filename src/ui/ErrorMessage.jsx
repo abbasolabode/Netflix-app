@@ -2,6 +2,7 @@ import {useRouteError } from "react-router-dom";
 
 
 export default function ErrorMessage() {
+	//The useRouteError is used to get any error from fetching data and also to display the error
 	const error = useRouteError();
 	return (
 		<div className="w-[24.375rem]">
