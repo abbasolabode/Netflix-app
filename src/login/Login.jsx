@@ -1,17 +1,29 @@
 import { Link } from "react-router-dom";
+//import lgScreenHero from "../assets/netflix-wallpaper.jpg";
 import loginLogo from "../assets/netflix-logo-svg.png";
+import Language from "../ui/Language";
 
 export default function Login() {
+	//const isLargeScreen = window.innerWidth >= 768; //if the width is greater or equal to 1440px
 	return (
-		<div className="w-[24.375rem] h-screen mobileMedium:w-[26.75rem] p-0 overflow-hidden bg-[#000] md:w-[48rem] md:flex md:justify-center md:justify-items-stretch bgScreen:w-[90rem] bgScreen:h-[158.75rem] bgScreen:flex">
-			<div className="md:w-[48rem]  md:flex md:flex-col md:items-center bgScreen:w-[90rem] bgScreen:flex bgScreen:flex-col bgScreen:justify-between bgScreen:h-[158.75rem] ">
+		<div
+			className="w-[24.375rem] min-h-[100vh] mobileMedium:w-[26.75rem] p-0 overflow-hidden bg-[#000] md:w-[48rem] md:flex md:justify-center md:justify-items-stretch bgScreen:w-[90rem] bgScreen:flex"
+			/* 			style={{
+				backgroundImage: `url(${isLargeScreen ? lgScreenHero : ""})`,
+			}} */
+		>
+			<div className="md:w-[48rem]  md:flex md:flex-col md:items-center  bgScreen:w-[90rem] bgScreen:flex bgScreen:flex-col bgScreen:justify-between bgScreen:h-[158.75rem] backdrop-filter backdrop-blur-[2px] ">
 				<Link
 					to="/"
-					className="block mt-4 mobileMedium:w-[26.75rem] md:mt-8 md:w-[48rem] md:ml-4 md:self start "
+					className="block mt-4 mobileMedium:w-[26.75rem] md:mt-8 md:w-[48rem] md:ml-4  "
 				>
-					<img src={loginLogo} className="w-[6rem] min-h-[2rem] ml-4 " />
+					<img
+						src={loginLogo}
+						className="w-[6rem] min-h-[2rem] ml-4 bgScreen:w-[9.25rem] bgScreen:min-h-[2.5rem]"
+					/>
 				</Link>
-				<form className="w-[24.375rem] py-3 md:w-[48rem] md:flex  md:flex-col md:mt-[2rem] md:justify-self-center md:ml-[22rem] bgScreen:self-">
+
+				<form className="w-[24.375rem] py-3 md:w-[48rem] md:flex md:ml-[20rem]  md:flex-col md:mt-[2rem] md:justify-self-center bgScreen:self-justify-self">
 					<div className="w-[24.375rem] md:mt-4">
 						<h2 className="w-[17rem] font-poppins rounded text-white font-semibold text-[1.9rem] mt-3 ml-4">
 							Sign In
@@ -84,13 +96,13 @@ export default function Login() {
 					</div>
 				</form>
 
-				<footer className="text-white mt-[15rem] w-[24.375rem] mobileMedium:w-[26.75rem] md:w-[48rem] md:mt-[9rem] md:justify-self-start md:ml-[2rem]">
+				<footer className="text-white mt-[15rem]  w-[24.375rem] mobileMedium:w-[26.75rem] mobileMedium:mb-[3rem] md:w-[48rem] md:mt-[9rem] md:justify-self-start md:ml-[2rem]">
 					<hr className="border-t border-stone-500 mobileMedium:hidden" />
 					<div className="w-[20rem] font-poppins text-stone-300 ml-5 mt-8 font-light">
 						<h2 className="font-poppins">Questions? contact us.</h2>
 					</div>
 
-					<ul className="grid grid-cols-2 gap-4  font-poppins text-stone-300 ml-5 mt-7 underline text-[0.8rem]  mobileMedium:w-[26.75rem] mobileMedium:ml-5">
+					<ul className="grid grid-cols-2 gap-4  font-poppins text-stone-300 ml-5 mt-7 underline text-[0.8rem]  mobileMedium:w-[26.75rem] mobileMedium:ml-5  bgScreen:w-[69.75rem]">
 						<li className="">
 							<Link>FAQ</Link>
 						</li>
@@ -103,6 +115,7 @@ export default function Login() {
 						<li className="md:ml-[7rem]">
 							<Link>Privacy</Link>
 						</li>
+
 						<li>
 							<Link>Cookie Preference</Link>
 						</li>
@@ -110,9 +123,9 @@ export default function Login() {
 							<Link>Corporate Information</Link>
 						</li>
 					</ul>
+					<Language />
 				</footer>
 			</div>
 		</div>
 	);
 }
-

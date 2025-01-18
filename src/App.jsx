@@ -14,6 +14,7 @@ import MovieInfo, {
 import { MovieProvider } from "./Contexts/MoviesContext";
 import EmailInputProvider from "./Contexts/EmailInputContext";
 import Login from "./login/Login";
+import Settings from "./Settings";
 
 
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
 				path: "/login", //Login path
 				element: <Login />,
 			},
+			{
+				path: "/settings",
+				element: <Settings/>
+			}
 		],
 	},
 ]);
